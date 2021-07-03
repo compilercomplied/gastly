@@ -18,8 +18,7 @@ namespace application.function.Functions.Cron
 
     [FunctionName("MorningWeather")]
     public async Task Run(
-      // [TimerTrigger("0 30 5 * * *")] TimerInfo myTimer
-      [TimerTrigger("0 * * * * *")] TimerInfo myTimer
+      [TimerTrigger("0 30 5 * * *")] TimerInfo myTimer
     )
     {
 
