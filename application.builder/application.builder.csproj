@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.16" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.16" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\domain.configuration\domain.configuration.csproj" />
+    <ProjectReference Include="..\domain.mapping\domain.mapping.csproj" />
+    <ProjectReference Include="..\domain.usecases\domain.usecases.csproj" />
+    <ProjectReference Include="..\infra.broadcast\infra.broadcast.csproj" />
+    <ProjectReference Include="..\infra.http\infra.http.csproj" />
+  </ItemGroup>
+
+</Project>

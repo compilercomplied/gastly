@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.16" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\domain.configuration\domain.configuration.csproj" />
+    <ProjectReference Include="..\domain.contracts\domain.contracts.csproj" />
+    <ProjectReference Include="..\domain.extensions\domain.extensions.csproj" />
+    <ProjectReference Include="..\infra.extensions.http\infra.extensions.http.csproj" />
+  </ItemGroup>
+
+</Project>

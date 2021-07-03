@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\domain.configuration\domain.configuration.csproj" />
+    <ProjectReference Include="..\domain.contracts\domain.contracts.csproj" />
+    <ProjectReference Include="..\domain.models\domain.models.csproj" />
+    <ProjectReference Include="..\infra.extensions.http\infra.extensions.http.csproj" />
+  </ItemGroup>
+
+</Project>
