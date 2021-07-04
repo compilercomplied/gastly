@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\infra.patches\infra.patches.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Resources\Infra\HttpResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
