@@ -1,4 +1,5 @@
 ﻿using domain.models.Resources;
+using infra.patches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,10 +41,12 @@ namespace domain.models.Usecases.WeatherQuery.Broadcast
 
     string BuildHeader()
     { 
-      var tz = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time");
-      var now = TimeZoneInfo.ConvertTime(DateTime.UtcNow, tz);
+
+      var now = TimeZoneInfo
+        .ConvertTime(DateTime.UtcNow, TZWrapper.GetLocalTZ());
 
       return $"<b>{now.ToString("dddd dd, MMMM")}</b>";
+
     }
 
     string BuildDayInfo(WLQTemperature temp, WLQHumidity hum)

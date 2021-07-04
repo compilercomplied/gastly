@@ -41,9 +41,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - infra", "04 - infra", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "application.console", "application.console\application.console.csproj", "{DAFE04C7-EC82-42DF-8F03-56B04C6421B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infra.broadcast", "infra.broadcast\infra.broadcast.csproj", "{35398A93-1D26-4B42-8768-A9EC815D34EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infra.broadcast", "infra.broadcast\infra.broadcast.csproj", "{35398A93-1D26-4B42-8768-A9EC815D34EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infra.extensions.http", "infra.extensions.http\infra.extensions.http.csproj", "{380421D5-08BB-4B32-AF7A-FFAAC71E380D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infra.extensions.http", "infra.extensions.http\infra.extensions.http.csproj", "{380421D5-08BB-4B32-AF7A-FFAAC71E380D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infra.patches", "infra.patches\infra.patches.csproj", "{33C50045-BA97-492B-9A18-DFAEDB521E83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{380421D5-08BB-4B32-AF7A-FFAAC71E380D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{380421D5-08BB-4B32-AF7A-FFAAC71E380D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{380421D5-08BB-4B32-AF7A-FFAAC71E380D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33C50045-BA97-492B-9A18-DFAEDB521E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33C50045-BA97-492B-9A18-DFAEDB521E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33C50045-BA97-492B-9A18-DFAEDB521E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33C50045-BA97-492B-9A18-DFAEDB521E83}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +127,7 @@ Global
 		{DAFE04C7-EC82-42DF-8F03-56B04C6421B7} = {9642DB96-BFBB-482A-ABDB-AA08B563C992}
 		{35398A93-1D26-4B42-8768-A9EC815D34EC} = {423D9270-84D3-478A-B983-9BB6AC62B508}
 		{380421D5-08BB-4B32-AF7A-FFAAC71E380D} = {423D9270-84D3-478A-B983-9BB6AC62B508}
+		{33C50045-BA97-492B-9A18-DFAEDB521E83} = {423D9270-84D3-478A-B983-9BB6AC62B508}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6480828-7613-49C4-91F4-53FE9FBF2529}
