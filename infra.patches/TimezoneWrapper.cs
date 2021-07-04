@@ -9,7 +9,7 @@ namespace infra.patches
   {
 
     public static TimeZoneInfo GetLocalTZ() =>
-      RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
+      RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
         ? TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time")
         : TimeZoneInfo.FindSystemTimeZoneById("CET");
 
