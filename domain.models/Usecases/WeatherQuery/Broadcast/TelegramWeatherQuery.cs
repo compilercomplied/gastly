@@ -32,11 +32,11 @@ namespace domain.models.Usecases.WeatherQuery.Broadcast
 
     public override string ToString()
     {
-      return Header
-        + $"\n{DayInfo}"
+      return Header + "\n"
         + (!string.IsNullOrEmpty(Morning)   ? $"\n{Morning}"    : string.Empty)
         + (!string.IsNullOrEmpty(Afternoon) ? $"\n{Afternoon}"  : string.Empty)
-        + (!string.IsNullOrEmpty(Evening)   ? $"\n{Evening}"    : string.Empty);
+        + (!string.IsNullOrEmpty(Evening)   ? $"\n{Evening}"    : string.Empty)
+        +$"\n\n{DayInfo}";
     }
 
     string BuildHeader()
@@ -51,22 +51,63 @@ namespace domain.models.Usecases.WeatherQuery.Broadcast
 
     string BuildDayInfo(WLQTemperature temp, WLQHumidity hum)
     {
-      return $"{temp.Min}-{temp.Max} C°"
-        + $"\n{hum.Min}-{hum.Max}% 💧";
+      return $"🌡 {temp.Min}/{temp.Max} °C\n"
+        + $"💧 {hum.Min}/{hum.Max}%";
     }
 
     string BuildDaySegment(WLQDay data, string displayname)
     {
 
-      string icon = data.RainfallProbability switch
+      string icon = data.Weather switch
       {
-        var x when (x >= 50 && x < 90)  => "🌧",
-        var x when (x >= 90)            => "🌧🌧",
-        _                               => string.Empty,
+        WeatherStatus.Sunny     => @"☀️",
+        WeatherStatus.Cloudy    => @"🌤",
+        WeatherStatus.Overcast  => @"☁️",
+        WeatherStatus.Storm     => @"⚡️",
+
+        WeatherStatus.CloudyRain    => @"🌦",
+        WeatherStatus.OvercastRain  => @"🌧",
+        WeatherStatus.StormRain     => @"⛈",
+
+        WeatherStatus.CloudySnow    => @"❄️",
+        WeatherStatus.OvercastSnow  => @"🌨",
+
+        _ => "🙉",
       };
 
-      return $"<code>{displayname}</code> {icon} ({data.RainfallProbability}%)";
+      string displayRainfall = data.RainfallProbability < 10
+        ? $"0{data.RainfallProbability}"
+        : data.RainfallProbability.ToString();
 
+      string displayTemperature = 
+        FormatDisplayTemperature(data.ExpectedTemperature);
+
+      string displayHumidity = FormatDisplayHumidity(data.Humidity);
+
+      return
+        $"{icon} <i>{displayRainfall}%</i><code> |=|{displayTemperature}°C|=|{displayHumidity}</code>";
+
+    }
+
+    string FormatDisplayHumidity(decimal humidity)
+    {
+
+      if (humidity >= 100)      return $"{humidity}%";
+      else if (humidity >= 10)  return $" {humidity}%";
+      else                      return $" {humidity} %";
+
+    }
+
+    string FormatDisplayTemperature(decimal? temperature)
+    {
+      if (!temperature.HasValue) return " ? ";
+
+      string result = (temperature < 10 && temperature > -10)
+        ? $"0{temperature}"
+        : temperature.ToString();
+
+      return result;
+      
     }
 
   }

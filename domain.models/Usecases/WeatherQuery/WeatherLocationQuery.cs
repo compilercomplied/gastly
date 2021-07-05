@@ -25,8 +25,11 @@ namespace domain.models.Usecases.WeatherQuery
   public class WLQDay
   { 
 
+    public WeatherStatus Weather { get; set; }
     public decimal RainfallProbability { get; set; }
     public WLQWind Wind { get; set; }
+    public decimal? ExpectedTemperature { get; set; }
+    public int Humidity { get; set; }
 
   }
 
